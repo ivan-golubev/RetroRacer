@@ -12,12 +12,30 @@ public class Car : MonoBehaviour {
 
     void FixedUpdate()
     {
-        var verticalInput = Input.GetAxis("Vertical");
-        var horizontalInput = Input.GetAxis("Horizontal");
-        frontLeftWheel.steerAngle = frontRightWheel.steerAngle = horizontalInput * MaxSteeringAngle;
-        frontLeftWheel.motorTorque = frontRightWheel.motorTorque = verticalInput * MotorForce;
-        rearRightWheel.motorTorque = rearLeftWheel.motorTorque = verticalInput * MotorForce;
+        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
 
+        Steer(horizontalInput);
+        Accelerate(verticalInput);
+        RotateWheels();
+    }
+
+    private void Steer(float horizontalInput)
+    {
+        if (frontLeftWheel != null) { frontLeftWheel.steerAngle = horizontalInput * MaxSteeringAngle; }
+        if (frontRightWheel != null) { frontRightWheel.steerAngle = horizontalInput * MaxSteeringAngle; }
+    }
+
+    private void Accelerate(float verticalInput)
+    {
+        if (frontLeftWheel != null) { frontLeftWheel.motorTorque = verticalInput * MotorForce; }
+        if (frontRightWheel != null) { frontRightWheel.motorTorque = verticalInput * MotorForce; }
+        if (rearRightWheel != null) { rearRightWheel.motorTorque = verticalInput * MotorForce; }
+        if (rearLeftWheel != null) { rearLeftWheel.motorTorque = verticalInput * MotorForce; }
+    }
+
+    private void RotateWheels()
+    {
         UpdateWheelPos(frontLeftWheel, frontLeftWheelT);
         UpdateWheelPos(frontRightWheel, frontRightWheelT);
         UpdateWheelPos(rearLeftWheel, rearLeftWheelT);
@@ -26,6 +44,7 @@ public class Car : MonoBehaviour {
 
     private void UpdateWheelPos(WheelCollider c, Transform t)
     {
+        if (c == null || t == null) { return; }
         Vector3 pos = transform.position;
         Quaternion rot = transform.rotation;
 

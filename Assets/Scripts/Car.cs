@@ -12,30 +12,34 @@ public class Car : MonoBehaviour {
 
     [SerializeField] private float MaxSteeringAngle = 30.0f;
     [SerializeField] private float MotorForce = 50.0f;
-    [SerializeField] private float zRotationLimit = 45.0f;
+
+    private float verticalInput, horizontalInput;
 
     private void Start()
     {
         CarRigidBody.centerOfMass = CenterOfMass.transform.localPosition;
     }
 
-    void FixedUpdate()
+    private void Update()
     {
-        float verticalInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
-        Steer(horizontalInput);
-        Accelerate(verticalInput);
-        RotateWheels();
-        //PreventFlippingOver();
+        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
     }
 
-    private void Steer(float horizontalInput)
+    void FixedUpdate()
+    {        
+        Steer();
+        Accelerate();
+        RotateWheels();
+    }
+
+    private void Steer()
     {
         if (frontLeftWheel != null) { frontLeftWheel.steerAngle = horizontalInput * MaxSteeringAngle; }
         if (frontRightWheel != null) { frontRightWheel.steerAngle = horizontalInput * MaxSteeringAngle; }
     }
 
-    private void Accelerate(float verticalInput)
+    private void Accelerate()
     {
         if (frontLeftWheel != null) { frontLeftWheel.motorTorque += verticalInput * MotorForce; }
         if (frontRightWheel != null) { frontRightWheel.motorTorque += verticalInput * MotorForce; }
@@ -61,15 +65,6 @@ public class Car : MonoBehaviour {
 
         t.position = pos;
         t.rotation = rot;
-    }
-
-    private void PreventFlippingOver()
-    {
-        Vector3 localRot = transform.localEulerAngles;
-        if (Mathf.Abs(localRot.z) > zRotationLimit)
-        {
-            transform.localEulerAngles = new Vector3(localRot.x, localRot.y, 0);
-        }
     }
 
 }

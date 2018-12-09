@@ -14,9 +14,14 @@ public class Car : MonoBehaviour {
     {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
-
-        Steer(horizontalInput);
-        Accelerate(verticalInput);
+        if (horizontalInput != 0)
+        {
+            Steer(horizontalInput);
+        }
+        if (verticalInput != 0)
+        {
+            Accelerate(verticalInput);
+        }
         RotateWheels();
     }
 

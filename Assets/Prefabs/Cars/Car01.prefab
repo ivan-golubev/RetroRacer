@@ -516,7 +516,7 @@ MonoBehaviour:
   rearLeftWheelT: {fileID: 4147279996822990}
   rearRightWheelT: {fileID: 4949883715639932}
   MaxSteeringAngle: 30
-  MaxAcceleration: 50
+  MotorForce: 50
 --- !u!146 &146065876393286580
 WheelCollider:
   m_ObjectHideFlags: 1

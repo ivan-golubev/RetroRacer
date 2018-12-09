@@ -324,8 +324,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1490005131202966}
-  m_LocalRotation: {x: -0, y: 0.7165157, z: -0, w: 0.697571}
-  m_LocalPosition: {x: 22.2, y: 2.56, z: 14.8}
+  m_LocalRotation: {x: 0, y: 0.9998767, z: -0, w: -0.015707303}
+  m_LocalPosition: {x: 45.43, y: 5.81, z: 60.58}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 4736191602151782}
@@ -610,14 +610,14 @@ MonoBehaviour:
   rearLeftWheelT: {fileID: 4142657043726616}
   rearRightWheelT: {fileID: 4833051992737096}
   MaxSteeringAngle: 30
-  MotorForce: 1000
+  MotorForce: 1500
 --- !u!135 &135198609506526318
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051566036133548}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d2a228baf338dc840b168dd4cf5bcd16, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -629,7 +629,7 @@ SphereCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1739926805701758}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d2a228baf338dc840b168dd4cf5bcd16, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -641,7 +641,7 @@ SphereCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609852230298716}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d2a228baf338dc840b168dd4cf5bcd16, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -688,7 +688,7 @@ WheelCollider:
     spring: 90000
     damper: 9000
     targetPosition: 1
-  m_SuspensionDistance: 0.04
+  m_SuspensionDistance: 0.05
   m_ForceAppPointDistance: 0
   m_Mass: 100
   m_WheelDampingRate: 1

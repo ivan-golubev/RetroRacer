@@ -7,22 +7,26 @@ public class Car : MonoBehaviour {
     [SerializeField] private WheelCollider frontLeftWheel, frontRightWheel, rearLeftWheel, rearRightWheel;
     [SerializeField] private Transform frontLeftWheelT, frontRightWheelT, rearLeftWheelT, rearRightWheelT;
 
+    [SerializeField] private Rigidbody CarRigidBody;
+    [SerializeField] private Transform CenterOfMass;
+
     [SerializeField] private float MaxSteeringAngle = 30.0f;
     [SerializeField] private float MotorForce = 50.0f;
+    [SerializeField] private float zRotationLimit = 45.0f;
+
+    private void Start()
+    {
+        CarRigidBody.centerOfMass = CenterOfMass.transform.localPosition;
+    }
 
     void FixedUpdate()
     {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
-        if (horizontalInput != 0)
-        {
-            Steer(horizontalInput);
-        }
-        if (verticalInput != 0)
-        {
-            Accelerate(verticalInput);
-        }
+        Steer(horizontalInput);
+        Accelerate(verticalInput);
         RotateWheels();
+        //PreventFlippingOver();
     }
 
     private void Steer(float horizontalInput)
@@ -33,10 +37,10 @@ public class Car : MonoBehaviour {
 
     private void Accelerate(float verticalInput)
     {
-        if (frontLeftWheel != null) { frontLeftWheel.motorTorque = verticalInput * MotorForce; }
-        if (frontRightWheel != null) { frontRightWheel.motorTorque = verticalInput * MotorForce; }
-        if (rearRightWheel != null) { rearRightWheel.motorTorque = verticalInput * MotorForce; }
-        if (rearLeftWheel != null) { rearLeftWheel.motorTorque = verticalInput * MotorForce; }
+        if (frontLeftWheel != null) { frontLeftWheel.motorTorque += verticalInput * MotorForce; }
+        if (frontRightWheel != null) { frontRightWheel.motorTorque += verticalInput * MotorForce; }
+        if (rearRightWheel != null) { rearRightWheel.motorTorque += verticalInput * MotorForce; }
+        if (rearLeftWheel != null) { rearLeftWheel.motorTorque += verticalInput * MotorForce; }
     }
 
     private void RotateWheels()
@@ -57,6 +61,15 @@ public class Car : MonoBehaviour {
 
         t.position = pos;
         t.rotation = rot;
+    }
+
+    private void PreventFlippingOver()
+    {
+        Vector3 localRot = transform.localEulerAngles;
+        if (Mathf.Abs(localRot.z) > zRotationLimit)
+        {
+            transform.localEulerAngles = new Vector3(localRot.x, localRot.y, 0);
+        }
     }
 
 }

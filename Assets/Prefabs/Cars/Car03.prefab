@@ -196,6 +196,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1968658882477086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4991918505584992}
+  m_Layer: 8
+  m_Name: CenterOfMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4124015430206380
 Transform:
   m_ObjectHideFlags: 1
@@ -233,7 +248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4888250048276264}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 16.02, y: 0, z: 0}
 --- !u!4 &4473136286818872
 Transform:
@@ -249,7 +264,7 @@ Transform:
   - {fileID: 4833051992737096}
   - {fileID: 4142657043726616}
   m_Father: {fileID: 4888250048276264}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4641950481697406
 Transform:
@@ -304,7 +319,7 @@ Transform:
   - {fileID: 4641950481697406}
   - {fileID: 4740949514450216}
   m_Father: {fileID: 4888250048276264}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4833051992737096
 Transform:
@@ -330,6 +345,7 @@ Transform:
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 4736191602151782}
+  - {fileID: 4991918505584992}
   - {fileID: 4473136286818872}
   - {fileID: 4828344493759778}
   - {fileID: 4460370956169236}
@@ -348,6 +364,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4828344493759778}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4991918505584992
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968658882477086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.031, z: -0.0416}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4888250048276264}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20946214734487524
 Camera:
@@ -668,8 +697,11 @@ MonoBehaviour:
   frontRightWheelT: {fileID: 0}
   rearLeftWheelT: {fileID: 4142657043726616}
   rearRightWheelT: {fileID: 4833051992737096}
+  CarRigidBody: {fileID: 54644662987147568}
+  CenterOfMass: {fileID: 4991918505584992}
   MaxSteeringAngle: 30
   MotorForce: 1500
+  zRotationLimit: 45
 --- !u!135 &135198609506526318
 SphereCollider:
   m_ObjectHideFlags: 1

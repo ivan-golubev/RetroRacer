@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23101206999862220}
   - component: {fileID: 64560268778627530}
   m_Layer: 0
-  m_Name: Road_turn
+  m_Name: Road_turn_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4565492726725614}
   m_Layer: 0
-  m_Name: Road_Straight_long
+  m_Name: Road_Straight_long_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

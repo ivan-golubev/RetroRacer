@@ -30,7 +30,7 @@ public class Car : MonoBehaviour {
     {        
         Steer();
         Accelerate();
-        RotateWheels();
+        //RotateWheels();
     }
 
     private void Steer()

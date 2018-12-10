@@ -13,6 +13,8 @@ public class Car : MonoBehaviour {
     [SerializeField] private float MaxSteeringAngle = 30.0f;
     [SerializeField] private float MotorForce = 50.0f;
 
+    [SerializeField] private Vector3 Velocity;
+
     private float verticalInput, horizontalInput;
 
     private void Start()
@@ -31,6 +33,9 @@ public class Car : MonoBehaviour {
         Steer();
         Accelerate();
         RotateWheels();
+        // TODO: apply “down pressure” force that depends on car velocity
+        Velocity = CarRigidBody.velocity;
+        //ControlDamping();
     }
 
     private void Steer()
@@ -41,10 +46,10 @@ public class Car : MonoBehaviour {
 
     private void Accelerate()
     {
-        if (frontLeftWheel != null) { frontLeftWheel.motorTorque += verticalInput * MotorForce; }
-        if (frontRightWheel != null) { frontRightWheel.motorTorque += verticalInput * MotorForce; }
-        if (rearRightWheel != null) { rearRightWheel.motorTorque += verticalInput * MotorForce; }
-        if (rearLeftWheel != null) { rearLeftWheel.motorTorque += verticalInput * MotorForce; }
+        if (frontLeftWheel != null) { frontLeftWheel.motorTorque = verticalInput * MotorForce; }
+        if (frontRightWheel != null) { frontRightWheel.motorTorque = verticalInput * MotorForce; }
+        if (rearRightWheel != null) { rearRightWheel.motorTorque = verticalInput * MotorForce; }
+        if (rearLeftWheel != null) { rearLeftWheel.motorTorque = verticalInput * MotorForce; }
     }
 
     private void RotateWheels()
@@ -67,4 +72,14 @@ public class Car : MonoBehaviour {
         t.rotation = rot;
     }
 
+    private void ControlDamping()
+    {
+        float minDamping = 10.0f;
+        float maxDamping = 90.0f;
+        float p = (1 - verticalInput);
+        if (frontLeftWheel != null) { frontLeftWheel.wheelDampingRate = minDamping + p * maxDamping; }
+        if (frontRightWheel != null) { frontRightWheel.motorTorque = minDamping + p * maxDamping; }
+        if (rearRightWheel != null) { rearRightWheel.motorTorque = minDamping + p * maxDamping; }
+        if (rearLeftWheel != null) { rearLeftWheel.motorTorque = minDamping + p * maxDamping; }
+    }
 }

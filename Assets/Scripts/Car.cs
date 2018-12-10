@@ -12,6 +12,7 @@ public class Car : MonoBehaviour {
 
     [SerializeField] private float MaxSteeringAngle = 30.0f;
     [SerializeField] private float MotorForce = 50.0f;
+    [SerializeField] private float DownwardForce = 10.0f;
 
     [SerializeField] private Vector3 Velocity;
 
@@ -36,6 +37,7 @@ public class Car : MonoBehaviour {
         // TODO: apply “down pressure” force that depends on car velocity
         Velocity = CarRigidBody.velocity;
         //ControlDamping();
+        ApplyDownwardForce();
     }
 
     private void Steer()
@@ -81,5 +83,9 @@ public class Car : MonoBehaviour {
         if (frontRightWheel != null) { frontRightWheel.motorTorque = minDamping + p * maxDamping; }
         if (rearRightWheel != null) { rearRightWheel.motorTorque = minDamping + p * maxDamping; }
         if (rearLeftWheel != null) { rearLeftWheel.motorTorque = minDamping + p * maxDamping; }
+    }
+
+    private void ApplyDownwardForce() {
+        CarRigidBody.AddForce(-transform.up * DownwardForce);
     }
 }

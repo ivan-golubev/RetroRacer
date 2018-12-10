@@ -8,24 +8,49 @@ ModelImporter:
     100004: Wheel
     100006: Wheel1
     100008: Wheel2
+    100010: Gun
+    100012: Wheel_Back_Left
+    100014: Wheel_Back_Right
+    100016: Wheel_Front_Left
+    100018: Wheel_Front_Right
     400000: Hull
     400002: //RootNode
     400004: Wheel
     400006: Wheel1
     400008: Wheel2
+    400010: Gun
+    400012: Wheel_Back_Left
+    400014: Wheel_Back_Right
+    400016: Wheel_Front_Left
+    400018: Wheel_Front_Right
     2100000: lambert1
     2300000: Hull
     2300002: Wheel
     2300004: Wheel1
     2300006: Wheel2
+    2300008: Gun
+    2300010: Wheel_Back_Left
+    2300012: Wheel_Back_Right
+    2300014: Wheel_Front_Left
+    2300016: Wheel_Front_Right
     3300000: Hull
     3300002: Wheel
     3300004: Wheel1
     3300006: Wheel2
+    3300008: Gun
+    3300010: Wheel_Back_Left
+    3300012: Wheel_Back_Right
+    3300014: Wheel_Front_Left
+    3300016: Wheel_Front_Right
     4300000: Wheel
     4300002: Wheel1
     4300004: Wheel2
     4300006: Hull
+    4300008: Wheel_Back_Left
+    4300010: Wheel_Back_Right
+    4300012: Wheel_Front_Right
+    4300014: Wheel_Front_Left
+    4300016: Gun
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -18,12 +18,13 @@ public class Car : MonoBehaviour {
 
     private float verticalInput, horizontalInput;
 
-    private void Start()
+    void Start()
     {
         CarRigidBody.centerOfMass = CenterOfMass.transform.localPosition;
+        StartCoroutine(DropCar());
     }
 
-    private void Update()
+    void Update()
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
@@ -87,4 +88,12 @@ public class Car : MonoBehaviour {
     private void ApplyDownwardForce() {
         CarRigidBody.AddForce(-transform.up * DownwardForce);
     }
+
+    IEnumerator DropCar() {
+        float mass = CarRigidBody.mass;
+        CarRigidBody.mass = 100000.0f;
+        yield return new WaitForSeconds(1.0f);
+        CarRigidBody.mass = mass;
+    }
+
 }

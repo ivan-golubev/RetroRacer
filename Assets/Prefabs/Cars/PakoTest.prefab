@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 54443211126575800}
   - component: {fileID: 65553860559130492}
   m_Layer: 0
-  m_Name: Car06
+  m_Name: PakoTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

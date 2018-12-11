@@ -70,7 +70,10 @@ public class Car : MonoBehaviour {
 
         c.GetWorldPose(out pos, out rot);
 
-        t.position = pos;
+        //if (c.isGrounded)
+        //{
+        //    t.position = pos;
+        //}
         t.rotation = rot;
     }
 

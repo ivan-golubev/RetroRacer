@@ -33,8 +33,7 @@ public class Car : MonoBehaviour {
     {        
         Steer();
         Accelerate();
-        //RotateWheels();
-        // TODO: apply “down pressure” force that depends on car velocity
+        RotateWheels();
         Velocity = CarRigidBody.velocity;
         //ControlDamping();
         ApplyDownwardForce();

@@ -22,16 +22,21 @@ public class Car : MonoBehaviour {
         joystick = FindObjectOfType<Joystick>();
         CarRigidBody.centerOfMass = CenterOfMass.transform.localPosition;
         StartCoroutine(DropCar());
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
+        joystick.gameObject.SetActive(false);
+#endif
     }
 
     void Update()
     {
-#if UNITY_EDITOR || UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
 #endif
+#if UNITY_IOS || UNITY_ANDROID
         verticalInput = joystick.Vertical;
         horizontalInput = joystick.Horizontal;
+#endif
     }
 
     void FixedUpdate()

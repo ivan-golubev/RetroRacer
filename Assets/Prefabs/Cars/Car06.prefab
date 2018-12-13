@@ -1151,9 +1151,8 @@ MonoBehaviour:
   CarRigidBody: {fileID: 54443211126575800}
   CenterOfMass: {fileID: 4737622858725836}
   MaxSteeringAngle: 20
-  MotorForce: 800
+  MotorForce: 2000
   DownwardForce: 25
-  Velocity: {x: 0, y: 0, z: 0}
 --- !u!135 &135207338756036188
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -9,48 +9,58 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1075964925936528}
+  m_RootGameObject: {fileID: 1945910722786726}
   m_IsPrefabAsset: 1
---- !u!1 &1075964925936528
+--- !u!1 &1945910722786726
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4884147576619638}
-  - component: {fileID: 114858164633370600}
+  - component: {fileID: 4227941612971580}
+  - component: {fileID: 65687358592548170}
+  - component: {fileID: 114113098232841056}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: RespawnCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4884147576619638
+--- !u!4 &4227941612971580
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1075964925936528}
+  m_GameObject: {fileID: 1945910722786726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.08, y: 29.39, z: -269.3}
+  m_LocalPosition: {x: 0, y: -33.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114858164633370600
+--- !u!65 &65687358592548170
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945910722786726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2000, y: 10, z: 2000}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114113098232841056
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1075964925936528}
+  m_GameObject: {fileID: 1945910722786726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3dadeeadeb9b742b9bc1c35a42201e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f2dc1a4bbe0bc0488cc80b71faf0bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarPrefab: {fileID: 114026942767542202, guid: 4bdce33de8b0bef439090459653b356d,
-    type: 2}
-  TotalLaps: 3

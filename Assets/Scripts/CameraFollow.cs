@@ -9,16 +9,17 @@ public class CameraFollow : MonoBehaviour {
 
     private Transform target;
 
-    void Start()
-    {
-        target = FindObjectOfType<Car>().CameraPosition;
-    }
-
-
     void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, target.position, smoothspeed);
-        transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, rotationSmoothSpeed);        
+        if (target != null)
+        {
+            transform.position = Vector3.Lerp(transform.position, target.position, smoothspeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, rotationSmoothSpeed);
+        }
     }
 
+    public void SetTarget(Transform t)
+    {
+        target = t;
+    }
 }

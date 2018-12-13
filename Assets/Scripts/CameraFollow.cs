@@ -2,12 +2,18 @@
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
-
-    public Transform target;
-
+    
     [SerializeField] private float smoothspeed = 0.125f;
     [SerializeField] private float rotationSmoothSpeed = 0.1f;
     [SerializeField] private Vector3 offset;
+
+    private Transform target;
+
+    void Start()
+    {
+        target = FindObjectOfType<Car>().CameraPosition;
+    }
+
 
     void LateUpdate()
     {

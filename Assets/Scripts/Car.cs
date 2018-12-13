@@ -9,6 +9,7 @@ public class Car : MonoBehaviour {
 
     [SerializeField] private Rigidbody CarRigidBody;
     [SerializeField] private Transform CenterOfMass;
+    public Transform CameraPosition;
 
     [SerializeField] private float MaxSteeringAngle = 30.0f;
     [SerializeField] private float MotorForce = 50.0f;

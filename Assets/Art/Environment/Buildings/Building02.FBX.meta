@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: f72ef0e879219af439c4f66b559551e9
+guid: 6d8694bf9bccbff438a85313bf2d82bc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: Building02
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Laserbolt
+    4300000: Building02
   externalObjects: {}
   materials:
     importMaterials: 1

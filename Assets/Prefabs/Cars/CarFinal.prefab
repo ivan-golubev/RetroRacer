@@ -1378,7 +1378,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1855488212475060}
   serializedVersion: 2
-  m_Mass: 1500
+  m_Mass: 1250
   m_Drag: 0
   m_AngularDrag: 1.5
   m_UseGravity: 1
@@ -2157,16 +2157,16 @@ WheelCollider:
   m_WheelDampingRate: 1.5
   m_ForwardFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 1
+    m_ExtremumValue: 25
     m_AsymptoteSlip: 1
-    m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_AsymptoteValue: 10
+    m_Stiffness: 1.3
   m_SidewaysFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 1
-    m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_ExtremumValue: 10
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 20
+    m_Stiffness: 0.5
   m_Enabled: 1
 --- !u!146 &146300801848186918
 WheelCollider:
@@ -2186,16 +2186,16 @@ WheelCollider:
   m_WheelDampingRate: 1.5
   m_ForwardFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 1
+    m_ExtremumValue: 25
     m_AsymptoteSlip: 1
-    m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_AsymptoteValue: 10
+    m_Stiffness: 1.3
   m_SidewaysFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 1
-    m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_ExtremumValue: 10
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 20
+    m_Stiffness: 0.5
   m_Enabled: 1
 --- !u!146 &146686617191158216
 WheelCollider:
@@ -2215,16 +2215,16 @@ WheelCollider:
   m_WheelDampingRate: 1.5
   m_ForwardFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 1
+    m_ExtremumValue: 25
     m_AsymptoteSlip: 1
-    m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_AsymptoteValue: 10
+    m_Stiffness: 1.3
   m_SidewaysFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 1
-    m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_ExtremumValue: 10
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 20
+    m_Stiffness: 0.5
   m_Enabled: 1
 --- !u!146 &146780189114606608
 WheelCollider:
@@ -2244,14 +2244,14 @@ WheelCollider:
   m_WheelDampingRate: 1.5
   m_ForwardFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 1
+    m_ExtremumValue: 25
     m_AsymptoteSlip: 1
-    m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_AsymptoteValue: 10
+    m_Stiffness: 1.3
   m_SidewaysFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 1
-    m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_ExtremumValue: 10
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 20
+    m_Stiffness: 0.5
   m_Enabled: 1

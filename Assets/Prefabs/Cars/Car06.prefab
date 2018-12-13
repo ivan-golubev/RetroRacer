@@ -599,7 +599,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1855488212475060}
   m_LocalRotation: {x: -0, y: 0.9998008, z: -0, w: 0.019957647}
-  m_LocalPosition: {x: 47.807, y: 25.33, z: -246.69}
+  m_LocalPosition: {x: 47.807, y: 24.975, z: -246.69}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 4038564213668094}
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b90c256ae989c8469375e2cd1d83349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaserProjectilePrefab: {fileID: 1548630092283558, guid: 38b07cb87b1c9e2489ed9f2a54300188,
+  LaserProjectilePrefab: {fileID: 114646511696792698, guid: 38b07cb87b1c9e2489ed9f2a54300188,
     type: 2}
   SpawnOrigin: {fileID: 4012050674333886}
 --- !u!135 &135207338756036188

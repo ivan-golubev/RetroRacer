@@ -5,7 +5,10 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private Car CarPrefab;
-    [SerializeField] private int TotalLaps = 3;   
+    [SerializeField] private int TotalLaps = 3;
+
+    [SerializeField] private AudioSource audioSrc;
+    [SerializeField] private AudioClip[] deathSounds;
 
     private HUD hud;
     private CameraFollow cameraFollow;
@@ -68,6 +71,11 @@ public class GameController : MonoBehaviour
         {
             cameraFollow.SetTarget(null);
             Destroy(playerCar.gameObject);
+            if (deathSounds.Length > 0)
+            {
+                audioSrc.clip = deathSounds[Random.Range(0, deathSounds.Length)];
+                audioSrc.Play();
+            }
             Respawn();
         }
     }

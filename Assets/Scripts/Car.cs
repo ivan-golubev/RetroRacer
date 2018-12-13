@@ -16,11 +16,13 @@ public class Car : MonoBehaviour {
     [SerializeField] private float DownwardForce = 10.0f;
 
     private Joystick joystick;
+    private HUD hud;
     private float verticalInput, horizontalInput;
 
     void Start()
     {
         joystick = FindObjectOfType<Joystick>();
+        hud = FindObjectOfType<HUD>();
         CarRigidBody.centerOfMass = CenterOfMass.transform.localPosition;
         StartCoroutine(DropCar());
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
@@ -41,6 +43,7 @@ public class Car : MonoBehaviour {
         verticalInput = joystick.Vertical;
         horizontalInput = joystick.Horizontal;
 #endif
+        hud.SetSpeed(CarRigidBody.velocity.magnitude * 3.6f);
     }
 
     void FixedUpdate()

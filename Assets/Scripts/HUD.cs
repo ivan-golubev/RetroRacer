@@ -33,9 +33,9 @@ public class HUD : MonoBehaviour
         LapsLabel.text = string.Format("{0}/{1} lap", currentLap, totalLaps);
     }
 
-    public void SetSpeed(int kph)
+    public void SetSpeed(float kph)
     {
-        SpeedLabel.text = string.Format("{0} km/h", kph);
+        SpeedLabel.text = string.Format("{0} km/h", (int)kph);
     }
 
     public void StartTimer(float startTime)

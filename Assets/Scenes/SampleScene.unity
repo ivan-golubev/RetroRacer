@@ -903,6 +903,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1880540777752940, guid: a457447d933cbf64fa09b5dbbaf332e2, type: 2}
+      propertyPath: m_Name
+      value: StartGrid
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a457447d933cbf64fa09b5dbbaf332e2, type: 2}
   m_IsPrefabAsset: 0

@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 54032133294039148}
-  ThrustMultiplier: 200
+  ThrustMultiplier: 350
   LifetimeSec: 3
 --- !u!136 &136895895411221988
 CapsuleCollider:

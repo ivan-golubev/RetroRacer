@@ -23,7 +23,10 @@ public class Car : MonoBehaviour {
         CarRigidBody.centerOfMass = CenterOfMass.transform.localPosition;
         StartCoroutine(DropCar());
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
-        joystick.gameObject.SetActive(false);
+        if (joystick != null)
+        {
+            joystick.gameObject.SetActive(false);
+        }
 #endif
     }
 

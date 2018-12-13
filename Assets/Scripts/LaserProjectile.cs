@@ -42,10 +42,10 @@ public class LaserProjectile : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
-        Obstacle o = collision.gameObject.GetComponent<Obstacle>();
+        Obstacle o = collision.gameObject.GetComponentInParent<Obstacle>();
         if (o != null)
         {
-            o.TakeLaserDamage();
+            o.TakeLaserDamage(collision.contacts[0]);
         }
     }
 

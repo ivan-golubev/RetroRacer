@@ -58,6 +58,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1374216371164112
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4012050674333886}
+  m_Layer: 0
+  m_Name: LaserSpawnOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1387698079494766
 GameObject:
   m_ObjectHideFlags: 1
@@ -276,9 +291,10 @@ GameObject:
   - component: {fileID: 4662496562556678}
   - component: {fileID: 33062843964181366}
   - component: {fileID: 23497492984614868}
-  - component: {fileID: 114026942767542202}
   - component: {fileID: 54443211126575800}
   - component: {fileID: 65553860559130492}
+  - component: {fileID: 114026942767542202}
+  - component: {fileID: 114959048042551994}
   m_Layer: 0
   m_Name: Car06
   m_TagString: Untagged
@@ -355,6 +371,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4012050674333886
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374216371164112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0016, y: 0.00152, z: 0.075}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4038564213668094}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4038564213668094
 Transform:
   m_ObjectHideFlags: 1
@@ -364,7 +393,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.008472408, z: 0.0589}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4012050674333886}
   m_Father: {fileID: 4662496562556678}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -569,7 +599,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1855488212475060}
   m_LocalRotation: {x: -0, y: 0.9998008, z: -0, w: 0.019957647}
-  m_LocalPosition: {x: 47.807, y: 28.76, z: -246.69}
+  m_LocalPosition: {x: 47.807, y: 25.33, z: -246.69}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 4038564213668094}
@@ -1153,6 +1183,20 @@ MonoBehaviour:
   MaxSteeringAngle: 20
   MotorForce: 2000
   DownwardForce: 25
+--- !u!114 &114959048042551994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855488212475060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b90c256ae989c8469375e2cd1d83349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LaserProjectilePrefab: {fileID: 1548630092283558, guid: 38b07cb87b1c9e2489ed9f2a54300188,
+    type: 2}
+  SpawnOrigin: {fileID: 4012050674333886}
 --- !u!135 &135207338756036188
 SphereCollider:
   m_ObjectHideFlags: 1

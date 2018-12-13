@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
     
-    [SerializeField] private float smoothspeed = 0.125f;
-    [SerializeField] private float rotationSmoothSpeed = 0.1f;
-    [SerializeField] private Vector3 offset;
+    [SerializeField] private float positionSmoothSpeed = 1f;
+    [SerializeField] private float rotationSmoothSpeed = 0.5f;    
 
     private Transform target;
 
@@ -13,8 +12,23 @@ public class CameraFollow : MonoBehaviour {
     {
         if (target != null)
         {
-            transform.position = Vector3.Lerp(transform.position, target.position, smoothspeed);
-            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, rotationSmoothSpeed);
+            if (positionSmoothSpeed >= 1.0f)
+            {
+                transform.position = target.position;
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, target.position, positionSmoothSpeed);
+            }
+            if (rotationSmoothSpeed >= 1.0f)
+            {
+                transform.rotation = target.rotation;
+            }
+            else
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, rotationSmoothSpeed);
+            }
+
         }
     }
 

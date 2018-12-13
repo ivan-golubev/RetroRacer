@@ -7,16 +7,27 @@ public class LaserProjectile : MonoBehaviour
     [SerializeField] private Rigidbody rigidBody;
     [SerializeField] private float ThrustMultiplier = 10.0f;
     [SerializeField] private float LifetimeSec = 3.0f;
+    [SerializeField] private AudioSource audioSrc;
+    [SerializeField] private AudioClip[] spawnSounds;
 
     private Vector3 direction;
     private bool directionSet;
-    private float timeElapsed;
+    private float timeElapsed;    
 
     public void SetDirection(Vector3 direction)
     {
         this.direction = direction;
         transform.rotation = Quaternion.FromToRotation(transform.forward, direction);
         directionSet = true;
+    }
+
+    void Start()
+    {
+        if (spawnSounds.Length > 0)
+        {
+            audioSrc.clip = spawnSounds[Random.Range(0, spawnSounds.Length)];
+            audioSrc.Play();
+        }
     }
 
     void Update()

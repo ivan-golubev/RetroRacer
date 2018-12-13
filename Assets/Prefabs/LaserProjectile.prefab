@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 136292257973489918}
   - component: {fileID: 54575160402633524}
   - component: {fileID: 114381997187790076}
+  - component: {fileID: 82241509038421916}
   m_Layer: 0
   m_Name: LaserProjectile
   m_TagString: Untagged
@@ -101,6 +102,101 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &82241509038421916
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349192951791228}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114381997187790076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,6 +211,15 @@ MonoBehaviour:
   rigidBody: {fileID: 54575160402633524}
   ThrustMultiplier: 350
   LifetimeSec: 3
+  audioSrc: {fileID: 82241509038421916}
+  spawnSounds:
+  - {fileID: 8300000, guid: cd543b1affd659d4fa96bcd0fb8f53a6, type: 3}
+  - {fileID: 8300000, guid: e8c48d20f6e4b3343a5764c783ff6dd8, type: 3}
+  - {fileID: 8300000, guid: 1e636c9b63a640b4bbbf2d0a56921c51, type: 3}
+  - {fileID: 8300000, guid: 2957fde10b3d52b45b09f2e9974b9308, type: 3}
+  - {fileID: 8300000, guid: 69e7a75285126cc4399aaa21cc577e35, type: 3}
+  - {fileID: 8300000, guid: d398309846b580e4286ea8db7f2fea0e, type: 3}
+  - {fileID: 8300000, guid: 5a6686cf4aae71646b248b71a76f504a, type: 3}
 --- !u!136 &136292257973489918
 CapsuleCollider:
   m_ObjectHideFlags: 1

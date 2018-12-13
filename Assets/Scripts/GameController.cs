@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private Car CarPrefab;
     [SerializeField] private int TotalLaps = 3;
 
-    private HUD hud;
+    [SerializeField] private AudioSource audioSrc;
+    [SerializeField] private AudioClip[] deathSounds;
 
+    private HUD hud;
+    private CameraFollow cameraFollow;
+
+    private Car playerCar;
     private int currentLap;
     private float gameStartTime;
     
     void Start()
     {
         hud = FindObjectOfType<HUD>();
+        cameraFollow = FindObjectOfType<CameraFollow>();
         hud.SetLap(currentLap, TotalLaps);
+        StartGame();
     }
 
     public int CurrentLap()
@@ -39,10 +47,37 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void StartGame()
+    {
+        playerCar = Instantiate(CarPrefab, transform.position, transform.rotation);
+        cameraFollow.SetTarget(playerCar.CameraPosition);
+    }
+
     private void StartTimer()
     {
         gameStartTime = Time.realtimeSinceStartup;
         hud.StartTimer(gameStartTime);
+    }
+
+    public void Respawn()
+    {
+        playerCar = Instantiate(CarPrefab, transform.position, transform.rotation);
+        cameraFollow.SetTarget(playerCar.CameraPosition);
+    }
+
+    public void OnCarCrashed(int carInstanceId)
+    {
+        if (playerCar.GetInstanceID() == carInstanceId)
+        {
+            cameraFollow.SetTarget(null);
+            Destroy(playerCar.gameObject);
+            if (deathSounds.Length > 0)
+            {
+                audioSrc.clip = deathSounds[Random.Range(0, deathSounds.Length)];
+                audioSrc.Play();
+            }
+            Respawn();
+        }
     }
 
 }

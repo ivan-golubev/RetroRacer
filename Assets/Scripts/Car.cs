@@ -14,10 +14,12 @@ public class Car : MonoBehaviour {
     [SerializeField] private float MaxSteeringAngle = 30.0f;
     [SerializeField] private float MotorForce = 50.0f;
     [SerializeField] private float DownwardForce = 10.0f;
+    public float CrashSpeed = 100.0f;
 
     private Joystick joystick;
     private HUD hud;
     private float verticalInput, horizontalInput;
+    private float CurrentSpeed;
 
     void Start()
     {
@@ -43,7 +45,8 @@ public class Car : MonoBehaviour {
         verticalInput = joystick.Vertical;
         horizontalInput = joystick.Horizontal;
 #endif
-        hud.SetSpeed(CarRigidBody.velocity.magnitude * 3.6f);
+        CurrentSpeed = CarRigidBody.velocity.magnitude * 3.6f;
+        hud.SetSpeed(CurrentSpeed);
     }
 
     void FixedUpdate()
@@ -52,6 +55,11 @@ public class Car : MonoBehaviour {
         Accelerate();
         RotateWheels();
         ApplyDownwardForce();
+    }
+
+    public float GetSpeed()
+    {
+        return CurrentSpeed;
     }
 
     private void Steer()

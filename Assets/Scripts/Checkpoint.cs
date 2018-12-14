@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
-{
-    public Transform SpawnPoint;
+{    
+    public Vector3 RotationEuler = Vector3.zero;
+    public Transform SpawnPosition;
 
     private GameController gameController;    
 

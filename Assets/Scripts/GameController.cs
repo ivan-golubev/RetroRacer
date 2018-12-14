@@ -65,6 +65,7 @@ public class GameController : MonoBehaviour
         if (currentLap == 1)
         {
             StartTimer();
+            lastCheckPoint = checkPoints[0];
         }
         if (currentLap == TotalLaps)
         {
@@ -89,6 +90,16 @@ public class GameController : MonoBehaviour
         hud.PlayStartAnimation();
         yield return new WaitForSeconds(1.5f);
         playerCar.StartCar();
+        // testing the checkpoints:
+        //TestCheckPoints();
+    }
+
+    private void TestCheckPoints()
+    {
+        foreach (var cp in checkPoints)
+        {
+            Instantiate(CarPrefab, cp.SpawnPosition.position, cp.SpawnPosition.rotation);
+        }
     }
 
     IEnumerator CommenceEndCeremony()
@@ -105,8 +116,8 @@ public class GameController : MonoBehaviour
 
     public void Respawn()
     {
-        var respawnPos = lastCheckPoint == null ? transform.position : lastCheckPoint.transform.position;
-        var respawnRot = lastCheckPoint == null ? transform.rotation : lastCheckPoint.transform.rotation * Quaternion.Euler(0, 180, 0);
+        var respawnPos = lastCheckPoint == null ? transform.position : lastCheckPoint.SpawnPosition.position;
+        var respawnRot = lastCheckPoint == null ? transform.rotation : lastCheckPoint.SpawnPosition.rotation;
         playerCar = Instantiate(CarPrefab, respawnPos, respawnRot);
         cameraFollow.SetTarget(playerCar.CameraPosition);
         playerCar.StartCar();

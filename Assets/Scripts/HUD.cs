@@ -9,6 +9,7 @@ public class HUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI TimeLabel;
     [SerializeField] private TextMeshProUGUI SpeedLabel;
     [SerializeField] private TextMeshProUGUI LapsLabel;
+    [SerializeField] private GameObject CountdownCeremony;
 
     private bool updateTimer;
     private float startTime;
@@ -48,6 +49,11 @@ public class HUD : MonoBehaviour
     {
         updateTimer = false;
         startTime = 0;
+    }
+
+    public void PlayStartAnimation()
+    {
+        CountdownCeremony.SetActive(true);
     }
 
 }

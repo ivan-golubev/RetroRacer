@@ -50,6 +50,8 @@ public class GameController : MonoBehaviour
         } else if (currentLap == TotalLaps)
         {
             hud.StopTimer();
+            playerCar.StopCar();
+            StartCoroutine(CommenceRestart());
         }
     }
 
@@ -57,6 +59,15 @@ public class GameController : MonoBehaviour
     {
         playerCar = Instantiate(CarPrefab, transform.position, transform.rotation);
         cameraFollow.SetTarget(playerCar.CameraPosition);
+        StartCoroutine(CommenceStart());
+    }
+
+    IEnumerator CommenceStart()
+    {
+        yield return new WaitForSeconds(1f);
+        hud.PlayStartAnimation();
+        yield return new WaitForSeconds(1.5f);
+        playerCar.StartCar();
     }
 
     private void StartTimer()
@@ -91,6 +102,12 @@ public class GameController : MonoBehaviour
     public void SaveCheckpoint(Checkpoint c)
     {
         this.lastCheckPoint = c;
+    }
+
+    IEnumerator CommenceRestart()
+    {
+        yield return new WaitForSeconds(5.0f);
+        RestartGame();
     }
 
     public void RestartGame()

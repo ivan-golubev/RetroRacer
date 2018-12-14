@@ -20,6 +20,7 @@ public class Car : MonoBehaviour {
     private HUD hud;
     private float verticalInput, horizontalInput;
     private float CurrentSpeed;
+    private bool Stopped = true;
 
     void Start()
     {
@@ -64,12 +65,14 @@ public class Car : MonoBehaviour {
 
     private void Steer()
     {
+        if (Stopped) { return; }
         if (frontLeftWheel != null) { frontLeftWheel.steerAngle = horizontalInput * MaxSteeringAngle; }
         if (frontRightWheel != null) { frontRightWheel.steerAngle = horizontalInput * MaxSteeringAngle; }
     }
 
     private void Accelerate()
     {
+        if (Stopped) { return; }
         if (frontLeftWheel != null) { frontLeftWheel.motorTorque = verticalInput * MotorForce; }
         if (frontRightWheel != null) { frontRightWheel.motorTorque = verticalInput * MotorForce; }
         if (rearRightWheel != null) { rearRightWheel.motorTorque = verticalInput * MotorForce; }
@@ -105,6 +108,16 @@ public class Car : MonoBehaviour {
         CarRigidBody.mass = 100000.0f;
         yield return new WaitForSeconds(1.0f);
         CarRigidBody.mass = mass;
+    }
+
+    public void StopCar()
+    {
+        Stopped = true;
+    }
+
+    public void StartCar()
+    {
+        Stopped = false;
     }
 
 }

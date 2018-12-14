@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private Car CarPrefab;
     [SerializeField] private int TotalLaps = 3;
+    [SerializeField] private GameObject CheckPointsRoot;
 
     [SerializeField] private AudioSource audioSrc;
     [SerializeField] private AudioClip[] deathSounds;
@@ -16,10 +17,14 @@ public class GameController : MonoBehaviour
     private Car playerCar;
     private int currentLap;
     private float gameStartTime;
+
+    private Checkpoint[] checkPoints;
+    private Checkpoint lastCheckPoint;
     
     void Start()
     {
         hud = FindObjectOfType<HUD>();
+        checkPoints = CheckPointsRoot.GetComponentsInChildren<Checkpoint>();
         cameraFollow = FindObjectOfType<CameraFollow>();
         hud.SetLap(currentLap, TotalLaps);
         StartGame();
@@ -61,7 +66,9 @@ public class GameController : MonoBehaviour
 
     public void Respawn()
     {
-        playerCar = Instantiate(CarPrefab, transform.position, transform.rotation);
+        var respawnPos = lastCheckPoint == null ? transform.position : lastCheckPoint.transform.position;
+        var respawnRot = lastCheckPoint == null ? transform.rotation : lastCheckPoint.transform.rotation * Quaternion.Euler(0, 180, 0);
+        playerCar = Instantiate(CarPrefab, respawnPos, respawnRot);
         cameraFollow.SetTarget(playerCar.CameraPosition);
     }
 
@@ -78,6 +85,11 @@ public class GameController : MonoBehaviour
             }
             Respawn();
         }
+    }
+
+    public void SaveCheckpoint(Checkpoint c)
+    {
+        this.lastCheckPoint = c;
     }
 
 }

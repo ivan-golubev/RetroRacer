@@ -150,6 +150,7 @@ MonoBehaviour:
   CarPrefab: {fileID: 114026942767542202, guid: 4bdce33de8b0bef439090459653b356d,
     type: 2}
   TotalLaps: 3
+  CheckPointsRoot: {fileID: 0}
   audioSrc: {fileID: 82206803635687506}
   deathSounds:
   - {fileID: 8300000, guid: 0656a82f8abcbd44e8b60b155429f7fb, type: 3}

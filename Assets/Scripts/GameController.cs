@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
 
     private HUD hud;
     private CameraFollow cameraFollow;
+    private StartScreen startScreen;
+    private EndScreen endScreen;
 
     private Car playerCar;
     private int currentLap;
@@ -27,7 +29,24 @@ public class GameController : MonoBehaviour
         hud = FindObjectOfType<HUD>();
         checkPoints = CheckPointsRoot.GetComponentsInChildren<Checkpoint>();
         cameraFollow = FindObjectOfType<CameraFollow>();
+        startScreen = FindObjectOfType<StartScreen>();
+        endScreen = FindObjectOfType<EndScreen>();
         hud.SetLap(currentLap, TotalLaps);
+        ShowStartScreen();
+    }
+
+    public void ShowStartScreen()
+    {
+        startScreen.gameObject.SetActive(true);
+        endScreen.gameObject.SetActive(false);
+        hud.gameObject.SetActive(false);
+    }
+
+    public void ShowEndScreen()
+    {
+        startScreen.gameObject.SetActive(false);
+        endScreen.gameObject.SetActive(true);
+        hud.gameObject.SetActive(false);
     }
 
     public int CurrentLap()
@@ -37,26 +56,29 @@ public class GameController : MonoBehaviour
 
     public void IncrementLaps()
     {
-        if (currentLap == TotalLaps)
+        if (currentLap != TotalLaps)
         {
-            return;
+            currentLap++;
         }
-        currentLap++;
+        
         hud.SetLap(currentLap, TotalLaps);
         if (currentLap == 1)
         {
             StartTimer();
-        } else if (currentLap == TotalLaps)
+        }
+        if (currentLap == TotalLaps)
         {
             hud.StopTimer();
             playerCar.StopCar();
-            StartCoroutine(CommenceRestart());
+            StartCoroutine(CommenceEndCeremony());
         }
     }
 
     public void StartGame()
     {
+        startScreen.gameObject.SetActive(false);
         playerCar = Instantiate(CarPrefab, transform.position, transform.rotation);
+        hud.gameObject.SetActive(true);
         cameraFollow.SetTarget(playerCar.CameraPosition);
         StartCoroutine(CommenceStart());
     }
@@ -67,6 +89,12 @@ public class GameController : MonoBehaviour
         hud.PlayStartAnimation();
         yield return new WaitForSeconds(1.5f);
         playerCar.StartCar();
+    }
+
+    IEnumerator CommenceEndCeremony()
+    {
+        yield return new WaitForSeconds(2.0f);
+        ShowEndScreen();
     }
 
     private void StartTimer()
@@ -102,12 +130,6 @@ public class GameController : MonoBehaviour
     public void SaveCheckpoint(Checkpoint c)
     {
         this.lastCheckPoint = c;
-    }
-
-    IEnumerator CommenceRestart()
-    {
-        yield return new WaitForSeconds(5.0f);
-        RestartGame();
     }
 
     public void RestartGame()

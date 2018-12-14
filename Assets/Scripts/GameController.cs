@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
@@ -20,12 +22,14 @@ public class GameController : MonoBehaviour
     private Car playerCar;
     private int currentLap;
     private float gameStartTime;
+    private TimeSpan[] LapTimes;
 
     private Checkpoint[] checkPoints;
     private Checkpoint lastCheckPoint;
     
     void Start()
     {
+        LapTimes = new TimeSpan[TotalLaps];
         hud = FindObjectOfType<HUD>();
         checkPoints = CheckPointsRoot.GetComponentsInChildren<Checkpoint>();
         cameraFollow = FindObjectOfType<CameraFollow>();
@@ -44,9 +48,10 @@ public class GameController : MonoBehaviour
 
     public void ShowEndScreen()
     {
-        startScreen.gameObject.SetActive(false);
-        endScreen.gameObject.SetActive(true);
+        startScreen.gameObject.SetActive(false);        
+        endScreen.gameObject.SetActive(true);        
         hud.gameObject.SetActive(false);
+        endScreen.SetLapTimes(LapTimes);
     }
 
     public int CurrentLap()
@@ -58,6 +63,7 @@ public class GameController : MonoBehaviour
     {
         if (currentLap != TotalLaps)
         {
+            LapTimes[currentLap] = TimeSpan.FromSeconds(Time.realtimeSinceStartup - gameStartTime);
             currentLap++;
         }
         

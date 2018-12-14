@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Car_cm
+  m_Name: Turbo
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _GLOSSYREFLECTIONS_OFF _SPECULAR_SETUP
   m_LightmapFlags: 2
@@ -35,15 +35,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 5b72dc966bf9cbf4086468e75e3415c1, type: 3}
+        m_Texture: {fileID: 2800000, guid: eafb1bd74257bcc489eea77eeac4513d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ce21c63d35d892b41aae870579f2a853, type: 3}
+        m_Texture: {fileID: 2800000, guid: eafb1bd74257bcc489eea77eeac4513d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: ce21c63d35d892b41aae870579f2a853, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -66,8 +66,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 0.549
-    - _Glossiness: 0.491
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
@@ -81,5 +81,5 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 255.99997, g: 255.99997, b: 255.99997, a: 1}
+    - _EmissionColor: {r: 1.9999998, g: 1.9999998, b: 1.9999998, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

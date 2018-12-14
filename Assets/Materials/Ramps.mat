@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Turbotime
-  m_Shader: {fileID: 4800000, guid: 285b591be4923b540ab6abd59e0a50bd, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_Name: PickUpCube
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ShaderKeywords: _EMISSION _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECULAR_SETUP
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -19,15 +19,23 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_422D1A9B:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 32ac7250bba36a74897901e0861fdac0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_761723C1:
+        m_Texture: {fileID: 2800000, guid: 1a97d95fb0e209e4196dd29a9b26a809, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_A0B65698:
+        m_Texture: {fileID: 2800000, guid: 9bf98862f5e98624795299e4f4823b7d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_F8E65731:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9323fe49d23c97c4b8bc4ec0203bde38, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -43,15 +51,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 20, y: 20}
+        m_Texture: {fileID: 2800000, guid: 18ec6c477fa6f414aa0fa649cfc89f29, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d00b9f0c8c727f948bc631452006a11c, type: 3}
-        m_Scale: {x: 20, y: 20}
+        m_Texture: {fileID: 2800000, guid: 7408b69ab16a49749b0b27e3d7d0592c, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1a97d95fb0e209e4196dd29a9b26a809, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -67,30 +75,34 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_C0DDA2F2: 0.58
     - _AlphaClip: 0
     - _Blend: 0
-    - _BumpScale: 1
+    - _BumpScale: 2.65
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _GlossMapScale: 0.161
+    - _Glossiness: 1
+    - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 3
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SampleGI: 0
-    - _SmoothnessTextureChannel: 0
+    - _Shininess: 0.5
+    - _SmoothnessTextureChannel: 1
+    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _UVSec: 0
-    - _WorkflowMode: 1
+    - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
-    - Color_6DE4C556: {r: 0.49056602, g: 0, b: 0.45192614, a: 0}
+    - Color_6DE4C556: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 2, g: 2, b: 2, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

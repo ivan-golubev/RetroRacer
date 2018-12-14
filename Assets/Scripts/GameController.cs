@@ -28,7 +28,6 @@ public class GameController : MonoBehaviour
         checkPoints = CheckPointsRoot.GetComponentsInChildren<Checkpoint>();
         cameraFollow = FindObjectOfType<CameraFollow>();
         hud.SetLap(currentLap, TotalLaps);
-        StartGame();
     }
 
     public int CurrentLap()
@@ -82,6 +81,7 @@ public class GameController : MonoBehaviour
         var respawnRot = lastCheckPoint == null ? transform.rotation : lastCheckPoint.transform.rotation * Quaternion.Euler(0, 180, 0);
         playerCar = Instantiate(CarPrefab, respawnPos, respawnRot);
         cameraFollow.SetTarget(playerCar.CameraPosition);
+        playerCar.StartCar();
     }
 
     public void OnCarCrashed(int carInstanceId)

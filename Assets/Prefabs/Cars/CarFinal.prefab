@@ -2029,6 +2029,7 @@ MonoBehaviour:
   MaxSteeringAngle: 20
   MotorForce: 2000
   DownwardForce: 25
+  CrashSpeed: 251
 --- !u!114 &114959048042551994
 MonoBehaviour:
   m_ObjectHideFlags: 1

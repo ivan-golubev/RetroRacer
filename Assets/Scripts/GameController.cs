@@ -63,6 +63,7 @@ public class GameController : MonoBehaviour
     {
         if (currentLap != TotalLaps)
         {
+            // TODO: this time is wrong
             LapTimes[currentLap] = TimeSpan.FromSeconds(Time.realtimeSinceStartup - gameStartTime);
             currentLap++;
         }

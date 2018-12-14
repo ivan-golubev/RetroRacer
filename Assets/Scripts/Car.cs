@@ -118,6 +118,19 @@ public class Car : MonoBehaviour {
     public void StartCar()
     {
         Stopped = false;
+        InitialBoost();
+    }
+
+    public void InitialBoost()
+    {
+        verticalInput = 100.0f;
+        Accelerate();
+    }
+
+    public void Speedup()
+    {
+        verticalInput = 250.0f;
+        Accelerate();
     }
 
 }

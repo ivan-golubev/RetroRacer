@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PickUpCube
+  m_Name: Ramps
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECULAR_SETUP
   m_LightmapFlags: 2
@@ -51,11 +51,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 18ec6c477fa6f414aa0fa649cfc89f29, type: 3}
+        m_Texture: {fileID: 2800000, guid: d7c9a7f22839e2a4ca31ad5795d336e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7408b69ab16a49749b0b27e3d7d0592c, type: 3}
+        m_Texture: {fileID: 2800000, guid: d7c9a7f22839e2a4ca31ad5795d336e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -104,5 +104,5 @@ Material:
     m_Colors:
     - Color_6DE4C556: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 2, g: 2, b: 2, a: 1}
+    - _EmissionColor: {r: 1.7207954, g: 1.7207954, b: 1.7207954, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
